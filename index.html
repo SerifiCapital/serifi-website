@@ -242,6 +242,47 @@ footer .wrap{align-items:flex-start;gap:16px}
 .hlogo img,.flogo img{display:block;width:100%;height:auto}
 .flogo{width:84px}
 @media(max-width:820px){.hlogo{width:min(104px,30vw);margin-bottom:28px}.flogo{width:76px}}
+
+/* Fullscreen-Hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:56px 0 170px}
+.hero>.wrap{width:100%}
+.sky{bottom:0}
+@media(max-width:820px){.hero{padding:40px 0 120px}}
+/* Gebäude: Fenster */
+.win{fill:currentColor;opacity:0;transition:opacity .8s ease;transition-delay:0s}
+.profile.in .win{opacity:.22;transition-delay:calc(1.2s + var(--i)*.07s)}
+@keyframes winpulse{0%,100%{opacity:.22}50%{opacity:.85}}
+@media(hover:hover){.card:hover .win.lit{animation:winpulse 2.8s ease-in-out calc(var(--i)*-.4s) infinite}}
+.card:active .win.lit{animation:winpulse 2.8s ease-in-out calc(var(--i)*-.4s) infinite}
+.card:hover,.card:active{transform:translateY(-4px)}
+.profile.in .chip{animation-fill-mode:backwards}
+/* Scroll-Reveal fuer Kacheln, Schritte, Kontakt, Bilder */
+.perks.rv,.steps.rv,.contact.rv,.gallery.rv{opacity:1;transform:none}
+.perks:not(.in) .perk,.steps:not(.in) .step,.contact:not(.in) .ct,.gallery:not(.in) .gi{opacity:0}
+.perks.in .perk,.steps.in .step,.contact.in .ct,.gallery.in .gi{animation:up .8s cubic-bezier(.2,.7,.2,1) backwards}
+.perks.in .perk:nth-child(2),.steps.in .step:nth-child(2),.contact.in .ct:nth-child(2),.gallery.in .gi:nth-child(2){animation-delay:.12s}
+.perks.in .perk:nth-child(3),.steps.in .step:nth-child(3),.contact.in .ct:nth-child(3),.gallery.in .gi:nth-child(3){animation-delay:.24s}
+.perks.in .perk:nth-child(4){animation-delay:.36s}
+/* Galerie-Bilder */
+.gi{overflow:hidden;border-radius:14px;border:1px solid var(--line);background:var(--soft);transform:translateZ(0)}
+.gallery img{border:0;border-radius:14px;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+/* Hover */
+.btn{transition:transform .25s ease,box-shadow .25s ease,opacity .25s ease}
+.btn:active{transform:scale(.98)}
+.chip,.step,.ct{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
+@media(hover:hover){
+.gi:hover img{transform:scale(1.02)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.hero .btn:hover{box-shadow:0 10px 30px rgba(255,255,255,.2)}
+.chip:hover{transform:translateY(-2px);border-color:var(--text)}
+.step:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
+.ct:hover{transform:translateY(-3px);border-color:var(--text)}
+}
+@media(prefers-reduced-motion:reduce){
+.perks:not(.in) .perk,.steps:not(.in) .step,.contact:not(.in) .ct,.gallery:not(.in) .gi{opacity:1!important}
+.win{opacity:.22!important}
+.card,.btn,.chip,.perk,.step,.ct,.gi img{transform:none!important}
+}
 </style>
 </head>
 <body>
@@ -268,7 +309,7 @@ footer .wrap{align-items:flex-start;gap:16px}
   <div class="head rv"><p class="tag">Ankaufsprofil</p><h2>Das kaufen wir.</h2><p>Unsere Kriterien auf einen Blick.</p></div>
   <div class="profile rv">
     <div class="pr"><small><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Region</small><div class="chips"><span class="chip v">Östliches Ruhrgebiet</span><span class="chip v">Saarland</span></div></div>
-    <div class="pr"><small><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg>Objektarten</small><div class="objs"><div class="card"><svg viewBox="0 0 320 170" fill="none" aria-hidden="true"><defs><pattern id="p1" width="30" height="34" patternUnits="userSpaceOnUse"><rect x="7" y="8" width="16" height="20" rx="2" fill="currentColor" opacity=".18"/></pattern></defs><g style="color:var(--text)"><rect x="90" y="34" width="140" height="116" fill="url(#p1)" stroke="currentColor" stroke-opacity=".5"/><path d="M82 34l78-28 78 28" stroke="currentColor" stroke-opacity=".5"/><rect x="148" y="114" width="24" height="36" fill="currentColor" opacity=".3"/><path d="M40 150h240" stroke="currentColor" stroke-opacity=".5"/></g></svg><div><h3>Mehrfamilienhäuser</h3><p>Mehrere Wohneinheiten</p></div></div><div class="card"><svg viewBox="0 0 320 170" fill="none" aria-hidden="true"><defs><pattern id="p2" width="30" height="34" patternUnits="userSpaceOnUse"><rect x="7" y="8" width="16" height="20" rx="2" fill="currentColor" opacity=".18"/></pattern></defs><g style="color:var(--text)"><rect x="34" y="70" width="110" height="80" fill="url(#p2)" stroke="currentColor" stroke-opacity=".5"/><rect x="152" y="24" width="134" height="126" fill="url(#p2)" stroke="currentColor" stroke-opacity=".5"/><path d="M20 150h280" stroke="currentColor" stroke-opacity=".5"/></g></svg><div><h3>Wohnanlagen</h3><p>Größere Wohnkomplexe</p></div></div><div class="card"><svg viewBox="0 0 320 170" fill="none" aria-hidden="true"><defs><pattern id="p3" width="30" height="34" patternUnits="userSpaceOnUse"><rect x="7" y="8" width="16" height="20" rx="2" fill="currentColor" opacity=".18"/></pattern></defs><g style="color:var(--text)"><rect x="80" y="24" width="160" height="82" fill="url(#p3)" stroke="currentColor" stroke-opacity=".5"/><rect x="80" y="106" width="160" height="44" fill="currentColor" opacity=".08" stroke="currentColor" stroke-opacity=".5"/><path d="M76 106h168l-12 12H88z" fill="currentColor" opacity=".3"/><rect x="100" y="126" width="50" height="24" fill="currentColor" opacity=".2"/><path d="M40 150h240" stroke="currentColor" stroke-opacity=".5"/></g></svg><div><h3>Wohn-/Geschäftshäuser</h3><p>Wohnen plus Gewerbe im EG</p></div></div></div></div>
+    <div class="pr"><small><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg>Objektarten</small><div class="objs"><div class="card"><svg viewBox="0 0 320 170" fill="none" aria-hidden="true"><g style="color:var(--text)"><rect x="90" y="34" width="140" height="116" stroke="currentColor" stroke-opacity=".5"/><path d="M82 34l78-28 78 28" stroke="currentColor" stroke-opacity=".5"/><rect x="148" y="114" width="24" height="36" fill="currentColor" opacity=".3"/><path d="M40 150h240" stroke="currentColor" stroke-opacity=".5"/><rect class="win" x="100.5" y="44.3" width="14" height="18" rx="2" style="--i:0"/><rect class="win lit" x="135.5" y="44.3" width="14" height="18" rx="2" style="--i:1"/><rect class="win" x="170.5" y="44.3" width="14" height="18" rx="2" style="--i:2"/><rect class="win" x="205.5" y="44.3" width="14" height="18" rx="2" style="--i:3"/><rect class="win lit" x="100.5" y="83.0" width="14" height="18" rx="2" style="--i:4"/><rect class="win" x="135.5" y="83.0" width="14" height="18" rx="2" style="--i:5"/><rect class="win" x="170.5" y="83.0" width="14" height="18" rx="2" style="--i:6"/><rect class="win lit" x="205.5" y="83.0" width="14" height="18" rx="2" style="--i:7"/><rect class="win" x="100.5" y="121.7" width="14" height="18" rx="2" style="--i:8"/><rect class="win" x="205.5" y="121.7" width="14" height="18" rx="2" style="--i:9"/></g></svg><div><h3>Mehrfamilienhäuser</h3><p>Mehrere Wohneinheiten</p></div></div><div class="card"><svg viewBox="0 0 320 170" fill="none" aria-hidden="true"><g style="color:var(--text)"><rect x="34" y="70" width="110" height="80" stroke="currentColor" stroke-opacity=".5"/><rect x="152" y="24" width="134" height="126" stroke="currentColor" stroke-opacity=".5"/><path d="M20 150h280" stroke="currentColor" stroke-opacity=".5"/><rect class="win" x="45.3" y="81.0" width="14" height="18" rx="2" style="--i:0"/><rect class="win lit" x="82.0" y="81.0" width="14" height="18" rx="2" style="--i:1"/><rect class="win" x="118.7" y="81.0" width="14" height="18" rx="2" style="--i:2"/><rect class="win" x="45.3" y="121.0" width="14" height="18" rx="2" style="--i:3"/><rect class="win lit" x="82.0" y="121.0" width="14" height="18" rx="2" style="--i:4"/><rect class="win" x="118.7" y="121.0" width="14" height="18" rx="2" style="--i:5"/><rect class="win" x="161.8" y="36.0" width="14" height="18" rx="2" style="--i:6"/><rect class="win lit" x="195.2" y="36.0" width="14" height="18" rx="2" style="--i:7"/><rect class="win" x="228.8" y="36.0" width="14" height="18" rx="2" style="--i:8"/><rect class="win" x="262.2" y="36.0" width="14" height="18" rx="2" style="--i:9"/><rect class="win lit" x="161.8" y="78.0" width="14" height="18" rx="2" style="--i:10"/><rect class="win" x="195.2" y="78.0" width="14" height="18" rx="2" style="--i:11"/><rect class="win" x="228.8" y="78.0" width="14" height="18" rx="2" style="--i:12"/><rect class="win lit" x="262.2" y="78.0" width="14" height="18" rx="2" style="--i:13"/><rect class="win" x="161.8" y="120.0" width="14" height="18" rx="2" style="--i:14"/><rect class="win" x="195.2" y="120.0" width="14" height="18" rx="2" style="--i:15"/><rect class="win lit" x="228.8" y="120.0" width="14" height="18" rx="2" style="--i:16"/><rect class="win" x="262.2" y="120.0" width="14" height="18" rx="2" style="--i:17"/></g></svg><div><h3>Wohnanlagen</h3><p>Größere Wohnkomplexe</p></div></div><div class="card"><svg viewBox="0 0 320 170" fill="none" aria-hidden="true"><g style="color:var(--text)"><rect x="80" y="24" width="160" height="82" stroke="currentColor" stroke-opacity=".5"/><rect x="80" y="106" width="160" height="44" fill="currentColor" opacity=".08" stroke="currentColor" stroke-opacity=".5"/><path d="M76 106h168l-12 12H88z" fill="currentColor" opacity=".3"/><path d="M40 150h240" stroke="currentColor" stroke-opacity=".5"/><rect class="win" x="89.0" y="35.5" width="14" height="18" rx="2" style="--i:0"/><rect class="win lit" x="121.0" y="35.5" width="14" height="18" rx="2" style="--i:1"/><rect class="win" x="153.0" y="35.5" width="14" height="18" rx="2" style="--i:2"/><rect class="win" x="185.0" y="35.5" width="14" height="18" rx="2" style="--i:3"/><rect class="win lit" x="217.0" y="35.5" width="14" height="18" rx="2" style="--i:4"/><rect class="win" x="89.0" y="76.5" width="14" height="18" rx="2" style="--i:5"/><rect class="win" x="121.0" y="76.5" width="14" height="18" rx="2" style="--i:6"/><rect class="win lit" x="153.0" y="76.5" width="14" height="18" rx="2" style="--i:7"/><rect class="win" x="185.0" y="76.5" width="14" height="18" rx="2" style="--i:8"/><rect class="win" x="217.0" y="76.5" width="14" height="18" rx="2" style="--i:9"/><rect class="win" x="100" y="126" width="50" height="24" rx="2" style="--i:10"/><rect class="win lit" x="170" y="126" width="50" height="24" rx="2" style="--i:11"/></g></svg><div><h3>Wohn-/Geschäftshäuser</h3><p>Wohnen plus Gewerbe im EG</p></div></div></div></div>
     <div class="pr"><small><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Nicht im Profil</small><div class="chips"><span class="chip x">Gewerbe</span><span class="chip x">Baugrundstücke</span><span class="chip x">Neubauten</span><span class="chip x">Erbbaurechte</span></div></div>
     <div class="pr"><small><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg>Erste Prüfung</small><div class="chips"><span class="chip">Adresse</span><span class="chip">Mieterliste</span><span class="chip">Preis</span></div></div>
   </div>
@@ -276,7 +317,7 @@ footer .wrap{align-items:flex-start;gap:16px}
 
 <section id="bestand"><div class="wrap">
   <div class="head rv"><p class="tag">Referenz</p><h2>Einblick in unseren Bestand.</h2><p>Mehrfamilienhaus · Östliches Ruhrgebiet</p></div>
-  <div class="gallery rv"><img src="referenz-1.jpg" alt="Mehrfamilienhaus im östlichen Ruhrgebiet, Ansicht 1" loading="lazy" decoding="async"><img src="referenz-2.jpg" alt="Mehrfamilienhaus im östlichen Ruhrgebiet, Ansicht 2" loading="lazy" decoding="async"><img src="referenz-3.jpg" alt="Mehrfamilienhaus im östlichen Ruhrgebiet, Ansicht 3" loading="lazy" decoding="async"></div>
+  <div class="gallery rv"><div class="gi"><img src="referenz-1.jpg" alt="Mehrfamilienhaus im östlichen Ruhrgebiet, Ansicht 1" loading="lazy" decoding="async"></div><div class="gi"><img src="referenz-2.jpg" alt="Mehrfamilienhaus im östlichen Ruhrgebiet, Ansicht 2" loading="lazy" decoding="async"></div><div class="gi"><img src="referenz-3.jpg" alt="Mehrfamilienhaus im östlichen Ruhrgebiet, Ansicht 3" loading="lazy" decoding="async"></div></div>
 </div></section>
 
 <section class="alt" id="vorteile"><div class="wrap">

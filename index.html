@@ -3,18 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
+<meta name="supported-color-schemes" content="light">
+<meta name="darkreader-lock">
+<meta name="theme-color" content="#fcfbf8">
 <title>Immobilienankauf Ruhrgebiet &amp; Saarland | Serifi Capital</title>
-<meta name="description" content="Serifi Capital kauft Mehrfamilienhäuser, Wohnanlagen und Wohn-/Geschäftshäuser im östlichen Ruhrgebiet und Saarland. Zügige Prüfung und Abwicklung.">
+<meta name="description" content="Serifi Capital kauft Mehrfamilienhäuser, Wohnanlagen und Wohn-/Geschäftshäuser im östlichen Ruhrgebiet und Saarland. Partner für Makler: zügige Abwicklung, garantierte Provision.">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Immobilienankauf Ruhrgebiet &amp; Saarland | Serifi Capital">
 <meta property="og:description" content="Wir kaufen Wohnimmobilien im östlichen Ruhrgebiet und im Saarland: Mehrfamilienhäuser, Wohnanlagen, Wohn-/Geschäftshäuser.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0c0d'/%3E%3Cpath d='M14 32L32 17l18 15v17H14z' fill='none' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M26 49V37h12v12' fill='none' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23000000'/%3E%3Cpolygon points='6,29 17,25 17,45 6,49' fill='%23CCCCCC'/%3E%3Cpolygon points='17,25 31,30.1 31,50.1 17,45' fill='%23FFFFFF'/%3E%3Cpolygon points='33,18 44,14 44,40 33,44' fill='%23CCCCCC'/%3E%3Cpolygon points='44,14 58,19.1 58,45.1 44,40' fill='%23FFFFFF'/%3E%3C/svg%3E">
 <style>
 :root{--bg:#fff;--soft:#f6f6f3;--soft2:#e9e9e5;--text:#0c0c0d;--muted:#62666d;--line:#e8e8e4;--ink:#0c0c0d;--on-ink:#fff;--sans:Inter,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{color-scheme:light;scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+html{color-scheme:only light;background:#fcfbf8;scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
@@ -117,6 +121,17 @@ footer a{margin-left:20px;text-decoration:none}footer a:hover{color:var(--text)}
 .card{transition:transform .3s,box-shadow .3s}.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(12,12,13,.12)}
 .ct,.reg{transition:transform .3s}.ct:hover{transform:translateY(-3px)}
 @media(prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}.hero h1,.hero .lead,.hero .btn,.pr,.chip{opacity:1!important;transform:none!important}.card svg [stroke]{stroke-dashoffset:0!important}}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.perk{background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:30px 30px 32px;transition:transform .3s,box-shadow .3s}
+.perk:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(12,12,13,.1)}
+.perk .ic{margin:0 0 18px;width:28px;height:28px}
+.perk h3{font-size:20px;letter-spacing:-.025em;margin:0 0 6px}
+.perk p{margin:0;color:var(--muted);font-size:16px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+.step{background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:30px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--on-ink);font-weight:700;margin-bottom:20px}
+.step h3{font-size:20px;letter-spacing:-.025em;margin:0 0 6px}
+.step p{margin:0;color:var(--muted);font-size:16px}
 .bar{display:none}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
@@ -127,7 +142,7 @@ body{font-size:16px}
 .btn{width:100%;justify-content:center}
 .facts{grid-template-columns:1fr}.facts div{border-left:0;border-top:1px solid var(--line);padding:18px 24px}.facts div:first-child{border-top:0}
 section{padding:60px 0}.head{margin-bottom:32px}
-.cards,.regions,.contact,.objs{grid-template-columns:1fr}.pr{grid-template-columns:1fr;gap:12px;padding:22px 20px}.pr>small{padding-top:0}
+.cards,.regions,.contact,.objs,.perks,.steps{grid-template-columns:1fr}.pr{grid-template-columns:1fr;gap:12px;padding:22px 20px}.pr>small{padding-top:0}
 .reg{padding:32px 24px 88px}
 .about p{font-size:17px}
 footer .wrap{flex-direction:column}footer a{margin:0 18px 0 0}
@@ -141,8 +156,8 @@ footer .wrap{flex-direction:column}footer a{margin:0 18px 0 0}
 <header class="hero" id="top"><svg class="sky" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMax slice" fill="currentColor" aria-hidden="true"><rect class="b" x="0" y="95" width="70" height="55" style="animation-delay:0.30s"/><rect class="b" x="80" y="60" width="60" height="90" style="animation-delay:0.37s"/><rect class="b" x="150" y="30" width="80" height="120" style="animation-delay:0.44s"/><rect class="b" x="240" y="70" width="60" height="80" style="animation-delay:0.51s"/><rect class="b" x="310" y="20" width="90" height="130" style="animation-delay:0.58s"/><rect class="b" x="410" y="75" width="70" height="75" style="animation-delay:0.65s"/><rect class="b" x="490" y="45" width="80" height="105" style="animation-delay:0.72s"/><rect class="b" x="580" y="85" width="60" height="65" style="animation-delay:0.79s"/><rect class="b" x="650" y="35" width="90" height="115" style="animation-delay:0.86s"/><rect class="b" x="750" y="70" width="70" height="80" style="animation-delay:0.93s"/><rect class="b" x="830" y="15" width="90" height="135" style="animation-delay:1.00s"/><rect class="b" x="930" y="60" width="70" height="90" style="animation-delay:1.07s"/><rect class="b" x="1010" y="40" width="80" height="110" style="animation-delay:1.14s"/><rect class="b" x="1100" y="80" width="100" height="70" style="animation-delay:1.21s"/><rect class="w" x="165" y="50" width="8" height="10" fill="var(--soft)" style="animation-delay:0.0s"/><rect class="w" x="185" y="50" width="8" height="10" fill="var(--soft)" style="animation-delay:0.7s"/><rect class="w" x="205" y="72" width="8" height="10" fill="var(--soft)" style="animation-delay:1.4s"/><rect class="w" x="325" y="45" width="8" height="10" fill="var(--soft)" style="animation-delay:2.1s"/><rect class="w" x="350" y="72" width="8" height="10" fill="var(--soft)" style="animation-delay:2.8s"/><rect class="w" x="670" y="60" width="8" height="10" fill="var(--soft)" style="animation-delay:3.5s"/><rect class="w" x="700" y="88" width="8" height="10" fill="var(--soft)" style="animation-delay:0.2s"/><rect class="w" x="850" y="40" width="8" height="10" fill="var(--soft)" style="animation-delay:0.9s"/><rect class="w" x="880" y="68" width="8" height="10" fill="var(--soft)" style="animation-delay:1.6s"/><rect class="w" x="1030" y="66" width="8" height="10" fill="var(--soft)" style="animation-delay:2.3s"/><rect class="w" x="1050" y="90" width="8" height="10" fill="var(--soft)" style="animation-delay:3.0s"/><rect class="w" x="500" y="70" width="8" height="10" fill="var(--soft)" style="animation-delay:3.7s"/></svg><div class="wrap">
   
   <h1>Wir kaufen Wohnimmobilien im Ruhrgebiet &amp; Saarland.</h1>
-  <p class="lead">Mehrfamilienhäuser, Wohnanlagen und Wohn-/Geschäftshäuser im Bestand. Zügig und verlässlich.</p>
-  <a class="btn" href="#kontakt">Immobilie anbieten <span aria-hidden="true">↓</span></a>
+  <p class="lead">Ihr Ankäufer für Mehrfamilienhäuser, Wohnanlagen und Wohn-/Geschäftshäuser. Mit garantierter, hochwertiger Provision für Makler.</p>
+  <a class="btn" href="#kontakt">Objekt anbieten <span aria-hidden="true">↓</span></a>
 </div></header>
 
 <section id="ueber"><div class="wrap">
@@ -150,7 +165,7 @@ footer .wrap{flex-direction:column}footer a{margin:0 18px 0 0}
     <div class="badge"><svg class="ic" style="margin:0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></svg></div>
     <p class="tag">Wer wir sind</p>
     <h2>Serifi Capital, Düsseldorf.</h2>
-    <p>Wir kaufen Wohnimmobilien im Bestand im östlichen Ruhrgebiet und im Saarland. Ankäufe wickeln wir zügig ab, Makler erhalten eine garantierte, hochwertige Provision.</p>
+    <p>Wir sind Immobilienankäufer aus Düsseldorf und kaufen Wohnimmobilien im Bestand im östlichen Ruhrgebiet und im Saarland. Mit Maklern arbeiten wir partnerschaftlich zusammen: klare Kriterien, zügige Entscheidungen und eine garantierte Provision.</p>
   </div>
 </div></section>
 
@@ -162,6 +177,16 @@ footer .wrap{flex-direction:column}footer a{margin:0 18px 0 0}
     <div class="pr"><small><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>Nicht im Profil</small><div class="chips"><span class="chip x">Gewerbe</span><span class="chip x">Baugrundstücke</span><span class="chip x">Neubauten</span><span class="chip x">Erbbaurechte</span></div></div>
     <div class="pr"><small><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg>Erste Prüfung</small><div class="chips"><span class="chip">Adresse</span><span class="chip">Mieterliste</span><span class="chip">Preis</span></div></div>
   </div>
+</div></section>
+
+<section id="vorteile"><div class="wrap">
+  <div class="head rv"><p class="tag">Für Makler</p><h2>Ihre Vorteile.</h2><p>Warum Makler gerne mit uns zusammenarbeiten.</p></div>
+  <div class="perks rv"><div class="perk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9a3.500 3.500 0 100 6M7 11h6M7 13.500h6"/></svg><h3>Garantierte Provision</h3><p>Sie erhalten eine garantierte, hochwertige Provision für jedes erfolgreich vermittelte Objekt.</p></div><div class="perk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>Zügige Abwicklung</h3><p>Wir prüfen zeitnah und wickeln den Ankauf direkt und verlässlich ab.</p></div><div class="perk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg><h3>Klares Ankaufsprofil</h3><p>Sie wissen sofort, ob ein Objekt passt: Region, Objektart und Ausschlüsse sind eindeutig definiert.</p></div><div class="perk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg><h3>Wenig Aufwand</h3><p>Für die erste Beurteilung genügen Adresse, Mieterliste und Preis.</p></div></div>
+</div></section>
+
+<section class="alt" id="ablauf"><div class="wrap">
+  <div class="head rv"><p class="tag">Vorgehen</p><h2>In drei Schritten zum Ankauf.</h2></div>
+  <div class="steps rv"><div class="step"><h3>Objekt senden</h3><p>Schicken Sie uns Adresse, Mieterliste und Ihre Preisvorstellung per E-Mail oder Telefon.</p></div><div class="step"><h3>Erste Prüfung</h3><p>Wir beurteilen das Objekt anhand dieser Eckdaten und melden uns zeitnah.</p></div><div class="step"><h3>Abwicklung &amp; Provision</h3><p>Passt das Objekt, wickeln wir den Ankauf zügig ab. Ihre Provision ist garantiert.</p></div></div>
 </div></section>
 
 <section id="kontakt"><div class="wrap">

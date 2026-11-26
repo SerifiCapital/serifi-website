@@ -226,10 +226,11 @@ footer{padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
     <a class="cr" href="mailto:info@serificapital.com"><small>E-Mail</small><b>info@serificapital.com</b></a>
     <div class="cr"><small>Adresse</small><b>Fährstrasse 217<br>40221 Düsseldorf</b></div></div>
   <form class="fm" id="of" action="https://formspree.io/f/mbgowejl" method="POST"><h3>Objekt anbieten</h3><p>Adresse und Preis eintragen, wir melden uns zeitnah.</p>
+    <label>Name<input name="name" autocomplete="name" placeholder="Ihr Name"></label>
+    <label>Telefonnummer<input type="tel" name="telefon" autocomplete="tel" inputmode="tel" placeholder="z. B. 0171 1234567"></label>
+    <label>E-Mail<input type="email" name="email" required autocomplete="email" placeholder="ihre@email.de"></label>
     <label>Adresse des Objekts<input name="adresse" required autocomplete="street-address" placeholder="Straße, PLZ, Ort"></label>
     <label>Preisvorstellung<input name="preis" required placeholder="z. B. 1.200.000 €"></label>
-    <label>E-Mail<input type="email" name="email" required autocomplete="email" placeholder="ihre@email.de"></label>
-    <label>Name / Telefon<input name="name" autocomplete="name" placeholder="Ihr Name und Ihre Nummer"></label>
     <input type="hidden" name="_subject" value="Objektangebot"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
     <button class="btn btn-k" type="submit">Objekt senden</button>
     <small id="fs" role="status">Mieterliste bitte per E-Mail an info@serificapital.com nachreichen.</small></form>
